@@ -27,3 +27,6 @@ spells:
   - yourTemplateName
 ```
 We plan to support multiple spells per repo in the future.
+
+# Contributing to Grimoire
+We are using `make build`/`make test` instead of the `swift` equivalent to handle test dependencies. Test dependencies are not a feature of the Swift Package Manager yet so we have to use this workaround meanwhile.
