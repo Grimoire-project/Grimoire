@@ -1,1 +1,1 @@
-foo
+some text content
