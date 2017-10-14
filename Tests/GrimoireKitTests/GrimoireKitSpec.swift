@@ -7,11 +7,14 @@ final class GrimoireKitSpec: QuickSpec {
     describe("command") {
       var args = ["grimoire"]
 
-      func command() -> Command {
+      var command: Command {
         return GrimoireKit.command(args: args)
       }
 
       context("when receiving no arguments") {
+        it("returns the help command") {
+          expect(command).to(beAKindOf(Help.self))
+        }
       }
 
       context("when argument is update") {
@@ -20,7 +23,7 @@ final class GrimoireKitSpec: QuickSpec {
         }
 
         it("returns the update command") {
-          expect(command()).to(beAKindOf(Update.self))
+          expect(command).to(beAKindOf(Update.self))
         }
       }
     }
