@@ -11,7 +11,7 @@ struct File {
 }
 
 extension File {
-  enum Error: LocalizedError {
+  enum Error: LocalizedError, Equatable {
     case invalidFilePath(String)
 
     var errorDescription: String? {
@@ -19,6 +19,10 @@ extension File {
       case .invalidFilePath(let path):
         return "Invalid file path \"\(path)\"."
       }
+    }
+
+    static public func == (x: Error, y: Error) -> Bool {
+      return x.localizedDescription == y.localizedDescription
     }
   }
 }
