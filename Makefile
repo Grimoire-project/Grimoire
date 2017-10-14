@@ -1,3 +1,5 @@
+build:
+	@sh scripts/build.sh
+
 test:
-	@set -o pipefail
-	@swift test 2>&1 | xcpretty -t
+	@sh scripts/test.sh
