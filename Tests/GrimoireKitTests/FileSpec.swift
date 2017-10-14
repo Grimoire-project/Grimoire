@@ -10,8 +10,9 @@ final class FileSpec: QuickSpec {
         let path = "fo  oo / bba r / bazz"
 
         it("throws the correct error") {
-          let expected = File.Error.invalidFilePath("file://" + path)
-          expect { try File.read(path) }.to(throwError(expected))
+          expect { try File.read(path) }.to(throwError { error in
+            expect(error.localizedDescription) == "The file “ bazz” couldn’t be opened because there is no such file."
+          })
         }
       }
 
@@ -21,25 +22,6 @@ final class FileSpec: QuickSpec {
 
         it("fetch the correct file") {
           expect { try File.read(path) } == "foo\n"
-        }
-      }
-    }
-
-    describe("Error") {
-      describe("==") {
-        let errorA = File.Error.invalidFilePath("error A")
-        let errorB = File.Error.invalidFilePath("error B")
-
-        context("when localized descriptions are different") {
-          it("returns false") {
-            expect(errorA) != errorB
-          }
-        }
-
-        context("when localized descriptions are the same") {
-          it("returns true") {
-            expect(errorA) == errorA
-          }
         }
       }
     }
