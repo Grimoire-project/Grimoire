@@ -3,3 +3,6 @@ build:
 
 test:
 	@sh scripts/test.sh
+
+local_setup:
+	brew install swiftlint
