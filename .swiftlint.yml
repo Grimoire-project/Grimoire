@@ -1,3 +1,5 @@
 included:
   - Sources
   - Tests
+disabled_rules:
+  - function_body_length
