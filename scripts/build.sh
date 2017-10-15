@@ -7,4 +7,4 @@ fi
 echo "Building grimoire with configuration $CONFIGURATION"
 
 export GRIMOIRE_ISTESTING=false
-swift build -c $CONFIGURATION
+swift build --disable-sandbox -c $CONFIGURATION
