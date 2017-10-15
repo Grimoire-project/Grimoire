@@ -1,6 +1,5 @@
 import Quick
 import Nimble
-import Foundation
 @testable import GrimoireKit
 
 final class FileSpec: QuickSpec {
@@ -17,8 +16,7 @@ final class FileSpec: QuickSpec {
       }
 
       context("when file path is valid") {
-        let currentDir = FileManager.default.currentDirectoryPath
-        let path = currentDir + "/Tests/GrimoireKitTests/Fixtures/FileSpecFixture.txt"
+        let path = Fixture.path("FileSpecFixture.txt")
 
         it("fetch the correct file") {
           expect { try File.read(path) } == "some text content\n"
