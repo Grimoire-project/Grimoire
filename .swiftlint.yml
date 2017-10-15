@@ -3,3 +3,4 @@ included:
   - Tests
 disabled_rules:
   - function_body_length
+  - identifier_name
