@@ -8,9 +8,9 @@ build:
 test:
 	@sh scripts/test.sh
 
-swiftpm:
+build_release:
 	CONFIGURATION=release ./scripts/build.sh
 
-swiftpm_install: swiftpm
+install: build_release
 	-$(MKDIR) "$(PREFIX)/bin"
 	$(CP) -f ./.build/release/grimoire "$(PREFIX)/bin/"
