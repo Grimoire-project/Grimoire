@@ -4,5 +4,5 @@ build:
 test:
 	@sh scripts/test.sh
 
-local_setup:
+setup_env:
 	brew install swiftlint
