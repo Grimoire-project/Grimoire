@@ -3,3 +3,6 @@ build:
 
 test:
 	@sh scripts/test.sh
+
+bootstrap:
+	@swift package generate-xcodeproj
