@@ -2,7 +2,13 @@
 Sourcery templates package manager.
 
 # Installation
-Run `brew install grimoire`.
+
+Install Grimoire via homebrew using the following:
+
+```
+brew tap Palleas/homebrew-tap
+brew install --HEAD grimoire
+```
 
 # Usage
 Create a `grimoire.yml` file:
