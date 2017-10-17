@@ -14,3 +14,7 @@ build_release:
 install: build_release
 	-$(MKDIR) "$(PREFIX)/bin"
 	$(CP) -f ./.build/release/grimoire "$(PREFIX)/bin/"
+
+setup_env:
+	brew install swiftlint
+

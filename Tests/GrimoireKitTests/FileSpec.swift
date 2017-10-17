@@ -10,7 +10,8 @@ final class FileSpec: QuickSpec {
 
         it("throws the correct error") {
           expect { try File.read(path) }.to(throwError { error in
-            expect(error.localizedDescription) == "The file “Help.swift” couldn’t be opened because there is no such file."
+            let expected = "The file “Help.swift” couldn’t be opened because there is no such file."
+            expect(error.localizedDescription) == expected
           })
         }
       }
